@@ -1,0 +1,48 @@
+<!-- promise : 자바스크립트 비동기 처리에 사용되는 객체-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    const flag = true;
+    //flag의 초깃값을 true로 설정
+
+    const promise = new Promise((resolve, reject) => {
+      if (flag) {
+        resolve("resolve 되었음");
+      } else {
+        reject("reject 되었음");
+      }
+    });
+
+    // flag가 true라면 resolve, false라면 reject 호출
+
+    promise
+      .then((resolveMessage) => {
+        console.log(resolveMessage);
+
+        return new Promise((resolve, reject) => {
+          if (flag) {
+            resolve("resolve 되었음2");
+          } else {
+            reject("reject 되었음2");
+          }
+        });
+      })
+      .then((resolveMessage2) => {
+        console.log(resolveMessage2);
+      })
+      .catch((errorMessage) => {
+        console.log(errorMessage);
+      });
+
+    //   flag의 상태가 true이기 때문에 resolveMessage와 resolveMessage2의 두 결과 모두 resolve된 것을 확인할 수 있다.
+  </script>
+</html>
