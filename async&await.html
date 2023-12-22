@@ -1,0 +1,33 @@
+<!-- async/await : 비동기식 코드를 동기식으로 표현하여 간단하게 나타내기 위한 문법 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async/await</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    function delay(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    // 2초 이후 값을 리턴하는 메서드
+    async function getApple() {
+      await delay(2000);
+      return "apple";
+    }
+
+    // 1초 이후 값을 리턴하는 메서드
+    async function getBanana() {
+      await delay(1000);
+      return "banana";
+    }
+
+    getApple().then(console.log);
+    getBanana().then(console.log);
+  </script>
+</html>
