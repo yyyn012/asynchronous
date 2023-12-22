@@ -1,0 +1,20 @@
+<!-- fetch : 서비스 워커에서도 쉽게 사용할 수 있는 프로미스 기반의 개선된 API -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async/await</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    fetch(url, options)
+      .then((response) => console.log("response:", response))
+      .catch((error) => console.log("error:", error));
+
+    //   fetch는 첫번째 인자인 url을 통해 API 호출에 성공하면 응답(response)객체를 resolve하고, 실패한다면 예외(error) 객체를 reject한다.
+  </script>
+</html>
