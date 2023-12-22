@@ -1,0 +1,24 @@
+<!-- callback : 전달 인자로 다른 함수에 전달되는 함수 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callback</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    const func = () => {
+      console.log("two");
+    };
+    console.log("one");
+    setTimeout(func, 5000);
+
+    console.log("three");
+
+    // 콘솔에 one출력 후 비동기 작업(setTimeout)을 Web API로 보낸 후 그 동안 콘솔에 "three"를 출력한다. setTimeout 작업이 끝나면 "two"를 출력한다.
+  </script>
+</html>
